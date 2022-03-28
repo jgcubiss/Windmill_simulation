@@ -1,0 +1,4 @@
+/control/cout/ignoreThreadsExcept 80
+/control/cout/ignoreInitializationCout
+/run/initialize
+/run/beamOn 1

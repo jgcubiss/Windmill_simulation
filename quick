@@ -1,0 +1,36 @@
+#!/bin/sh
+#Sorting data from disk, enter the upper and lower number of the file to sort
+
+test -f file.dat && rm file.dat
+
+# How many particles in run?
+if [ $# -eq "1" ]; then
+	nPart=$1
+else
+	echo "Number of particles?"
+	read nPart
+fi
+
+# Make macro file for simulation
+echo "/process/em/verbose 0" >> test1.mac
+echo "/process/had/verbose 0" >> test1.mac
+echo "/control/cout/ignoreThreadsExcept 80" >> test1.mac
+echo "/control/cout/ignoreInitializationCout" >> test1.mac
+echo "/run/initialize" >> test1.mac		# Initialize simulation
+echo "/run/beamOn $nPart" >> test1.mac		# Run for n number of particles
+
+# run simulation
+./mySimulation -m test1.mac
+
+# combine output file into one root file
+test -f Raw.root && rm Raw.root
+mv B4.root Raw.root
+#
+## remove files that aren't needed
+rm -f B4*.root test1.mac
+# make backup file
+cp Raw.root backup.root
+# broaden spectra
+root -l broaden.c
+
+exit
