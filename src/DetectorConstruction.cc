@@ -223,10 +223,11 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 	worldLV->SetVisAttributes (G4VisAttributes::GetInvisible());
 
 	auto detectorVisAtt = new G4VisAttributes(G4Colour(180./255,125./255,0./255,0.7));
-	auto foilVisAtt     = new G4VisAttributes(G4Colour(1.,1.,1.,0.7));
-	//detectorVisAtt->SetVisibility(true);
+//	detectorVisAtt->SetVisibility(true);
 	annularDetectorLV->SetVisAttributes(detectorVisAtt);
 	circularDetectorLV->SetVisAttributes(detectorVisAtt);
+
+//	auto foilVisAtt     = new G4VisAttributes(G4Colour(1.,1.,1.,0.7));
 //	foilLV->SetVisAttributes(foilVisAtt);
 
 	//

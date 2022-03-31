@@ -36,8 +36,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(mySimulation mySimulation.cc ${sources} ${headers})
-target_link_libraries(mySimulation ${Geant4_LIBRARIES})
+add_executable(windmillSimulation windmillSimulation.cc ${sources} ${headers})
+target_link_libraries(windmillSimulation ${Geant4_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
@@ -54,7 +54,7 @@ set(EXAMPLEB4C_SCRIPTS
   K_x_in.dat
   L_x_in.dat
   broaden.c
-  quick
+  quickRun
   )
 
 foreach(_script ${EXAMPLEB4C_SCRIPTS})
@@ -68,4 +68,4 @@ endforeach()
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
-install(TARGETS mySimulation DESTINATION .)
+install(TARGETS windmillSimulation DESTINATION .)

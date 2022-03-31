@@ -20,7 +20,7 @@ echo "/run/initialize" >> test1.mac		# Initialize simulation
 echo "/run/beamOn $nPart" >> test1.mac		# Run for n number of particles
 
 # run simulation
-./mySimulation -m test1.mac
+windmillSimulation -m test1.mac
 
 # combine output file into one root file
 test -f Raw.root && rm Raw.root
