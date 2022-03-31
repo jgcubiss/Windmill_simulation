@@ -159,7 +159,7 @@ int main(int argc,char** argv)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....
 
-// Read input from config file
+// Read input from config file and output info to terminal
 void readConfigFile()
 {
 	std::string dummy, dummy2;
@@ -310,15 +310,5 @@ void readXRayFiles()
 		tmpE.clear();
 		tmpI.clear();
 		LXRayFile.close();
-	}
-	
-	for(int i=0; i<3; i++)
-	{
-		G4cout << "\n\n  L" << i+1 << " ENERGIES:\n\n";
-		for(int j=0; j<lEnergy[i].size(); j++)
-		{
-			G4cout << "  " << lEnergy[i][j] << "\t" << lIntensity[i][j] << "\n";
-		}
-		G4cout << "\n\n";
 	}
 }
