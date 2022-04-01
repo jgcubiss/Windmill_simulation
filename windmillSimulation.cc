@@ -74,7 +74,7 @@ int main(int argc,char** argv)
   G4String macro;
   G4String session;
 #ifdef G4MULTITHREADED
-  G4int nThreads = 4;
+  G4int nThreads = 2;
 #endif
   for ( G4int i=1; i<argc; i=i+2 ) {
     if      ( G4String(argv[i]) == "-m" ) macro = argv[i+1];

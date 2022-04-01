@@ -81,7 +81,6 @@ RunAction::RunAction()
 
 RunAction::~RunAction()
 {
-  delete G4AnalysisManager::Instance();  
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -104,18 +103,7 @@ void RunAction::BeginOfRunAction(const G4Run* /*run*/)
 
 void RunAction::EndOfRunAction(const G4Run* /*run*/)
 {
-  // print histogram statistics
-  //
   auto analysisManager = G4AnalysisManager::Instance();
-  if ( analysisManager->GetH1(1) ) {
-    G4cout << G4endl << " ----> print histograms statistic ";
-    if(isMaster) {
-      G4cout << "for the entire run " << G4endl << G4endl; 
-    }
-    else {
-      G4cout << "for the local thread " << G4endl << G4endl; 
-    }
-  }
 
   // save histograms & ntuple
   //

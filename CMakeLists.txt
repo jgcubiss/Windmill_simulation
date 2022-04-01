@@ -51,8 +51,8 @@ set(EXAMPLEB4C_SCRIPTS
   config.cfg
   a_in.dat
   g_in.dat
-  K_x_in.dat
-  L_x_in.dat
+#  K_x_in.dat
+#  L_x_in.dat
   broaden.c
   quickRun
   )
